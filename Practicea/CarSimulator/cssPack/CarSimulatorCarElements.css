@@ -1,0 +1,200 @@
+﻿
+
+
+
+#startButton {
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50% );
+    cursor: pointer;
+}
+
+    #startButton.start-inactive {
+        border: 1px solid #c9c0bb;
+        box-shadow: inset 0 0 1px 1px #c9c0bb, 0 0 1px 1px #c9c0bb;
+        background-color: #e5e4e2;
+    }
+
+    #startButton.activаted-clicked {
+        border: 1px solid #fd8574;
+        box-shadow: inset 0 0 1px 1px #fbbc92, 0 0 1px 1px #fbbc92;
+        background-color: rgb(211,192,187);
+        background: linear-gradient(#fbe2a1, #f5e9d0);
+    }
+
+
+#startButton.activаted {
+
+    border: 1px solid #fd8574;
+    box-shadow: inset 0 0 1px 1px #fbbc92, 0 0 1px 1px #fbbc92;
+    background-color: rgb(211,192,187);
+        background: linear-gradient(#fbe2a1, #cc8a00);
+}
+
+    #startButton.activаted:hover {
+        /*background: linear-gradient(#e0bd64, #a07822);*/
+        background: linear-gradient(#f4d080, #c28400);
+        cursor: pointer;
+    }
+
+/*#startButton.inactive:hover {
+    background: linear-gradient(#e0bd64, #a07822);
+    background: linear-gradient(#e0bd64, #986700);
+    cursor: pointer;
+}*/
+
+#pStartButtonText {
+    /*margin-top: calc(50%-40px);*/
+    position: relative;
+    top: 50%;
+    transform: translateY(-50% );
+    font-size: 0.7rem;
+    font-family: Arial;
+    /**/
+    color: #634746;
+    font-weight: bold;
+    text-shadow: 0 0 2px #ffe6ba;
+}
+
+    #pStartButtonText.activаted-red {
+        color: #cc0000;
+    }
+
+
+#revsMeter {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100px;
+    height: 404px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+}
+
+#pEngineSpeedReader {
+    /*text-align: center;*/
+    font-size: 2.4rem;
+    /*font-weight: bold;*/
+}
+
+#speedoMeter {
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100px;
+    height: 404px;
+    border: 1px solid #000000;
+}
+
+#pCarSpeedReader {
+    /*text-align: center;*/
+    font-size: 2.4rem;
+    /*font-weight: bold;*/
+}
+
+
+.gas-slider, .breaks-slider {
+    width: 70px;
+    height: 180px;
+    padding: 10px;
+    background: #f5f5f5;
+    border: 1px solid #00acee;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.15)
+}
+
+    .breaks-slider .sub-slider {
+        padding-top: 12px;
+        padding-left: 7px;
+        border: 2px solid #00acee;
+        border-radius: 3px;
+        /*outline: 4px solid gray;*/
+        height: 134px;
+        margin: 0;
+    }
+
+    .gas-slider .sub-slider {
+        border: 2px solid #00acee;
+        border-radius: 3px;
+        /*outline: 4px solid gray;*/
+        position: relative;
+        height: 134px;
+        margin: 0;
+    }
+
+    .gas-slider p, .breaks-slider p {
+        font-size: 18px;
+        font-weight: 600;
+        font-family: sans-serif;
+        margin-top: 12px;
+        color: #00acee;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        margin-top: 4px;
+    }
+
+    .gas-slider .sub-slider input[type="range"] {
+        position: absolute;
+        bottom: 60px;
+        left: -28px;
+        width: 100px;
+        /*height: 1px;*/
+        background: #00acee;
+        /*border: none;*/
+        outline: none;
+        transform: rotate(270deg);
+    }
+
+
+        .gas-slider .sub-slider input[type="range"]::-webkit-slider-thumb:hover {
+            background: #00acee;
+        }
+
+
+    .breaks-slider .sub-slider input[type="range"] {
+        writing-mode: bt-lr; /* IE */
+        -webkit-appearance: slider-vertical; /* WebKit */
+        width: 30px;
+        height: 100px;
+        /*padding: 0 24px;*/
+        outline: none;
+        /*background: transparent;*/
+    }
+
+        .breaks-slider .sub-slider input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+        }
+
+
+
+.revs-idle {
+    background-color: #cc9200;
+}
+
+.revs-main-scale {
+    background-color: #789204;
+}
+
+.revs-optimal {
+    background-color: #2bc32b;
+}
+
+.revs-over-limit {
+    background-color: #f58400;
+}
+
+.revs-danger {
+    background-color: firebrick;
+}
+
+.revs-reader-danger {
+    color: firebrick;
+}

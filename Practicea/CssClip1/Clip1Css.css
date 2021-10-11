@@ -1,0 +1,40 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    /*background: linear-gradient(rgba(0,0,0,0.91),rgba(0,0,0,0.92)),url(https://ermahblurg.files.wordpress.com/2015/03/slitscan-selfies-pre-grid.jpg);*/
+
+}
+
+#torch {
+    position: relative;
+    background-color: black;
+    /*top: 0px;
+    left: 0px;*/
+    width: 100vw;
+    height: 100vh;
+    background: url("https://ermahblurg.files.wordpress.com/2015/03/slitscan-selfies-pre-grid.jpg");
+    /*clip: rect(0px,100px,100px,0px);*/
+
+    -webkit-mask:
+    /*                        X    Y   / wwidth height */
+    linear-gradient(#000 0 0) 100px 100px/170px 170px, /* control the clipped part here*/
+    linear-gradient(rgba(0,0,0,0.2) 0 0); /* control the opacity here */
+    -webkit-mask-repeat: no-repeat;
+
+}
+
+.fog {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    /*opacity: 0.5;*/
+    /*clip: rect(0px,100px,100px,0px);*/
+
+}

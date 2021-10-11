@@ -1,0 +1,107 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+
+.wind-shield {
+    width: 440px;
+    height: 300px;
+    border: 1px solid black;
+    margin: auto;
+    overflow: hidden; /*auto*/
+    margin-top: 10px;
+    position: relative;
+    border-radius: 12px;
+}
+
+#road {
+    width: 200px;
+    height: 220px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    /*top: -31px;*/
+    /*position: relative;*/ /**/ /*transform: perspective(12px)*/ /*scaleY(20px)*/
+    overflow: hidden;
+    transform: translateY(-43px) perspective(9px) rotateX(3deg);
+}
+
+.horizon {
+    border-bottom: 1px solid black;
+    height: 108px;
+    /*transform: translateY(31px);*/
+}
+
+.the-sun {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: #efc653;
+    border: 1px solid #efdc53;
+    margin-right: 42px;
+    margin-top: 15px;
+    float: right;
+}
+
+.road-strip {
+    width: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block-road-strip {
+    background-color: black;
+}
+
+
+.blank-road-strip {
+    /*background-color: white;*/
+}
+
+.front-wrapper {
+    /*display: inline-block;*/
+    width: 90%;
+    margin-bottom:22px
+}
+
+.control-panel {
+    /*display: inline-block;*/
+    width: 90%;
+}
+
+
+.control-panel-inner {
+    width: 400px;
+    background-color: #dddddd;
+    padding: 12px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttonHolder {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.control-panel-inner div:first-of-type {
+    margin-top: 2px;
+}
+
+.buttons {
+    padding: 8px;
+    border-radius:5px;
+}
+
+#btnReverse {
+    width: 120px;
+}
+
+
+
+
+

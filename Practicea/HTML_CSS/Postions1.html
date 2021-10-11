@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Positions Experiment</title>
+
+
+    <style>
+
+
+        .wrapper {
+            width: 500px;
+            height: 500px;
+            border: 5px solid black;
+            /*margin: 25px;*/
+            /*display: inline-block;*/
+            background: lightblue;
+            vertical-align: top;
+            padding: 10px;
+            position: relative;
+        }
+
+        .inner-wrapper {
+            
+            width: 400px;
+            height: 400px;
+            border: 3px solid black;
+            background-color: bisque;
+            vertical-align: top;
+            padding: 10px;
+        }
+
+        .box {
+            position: absolute;
+            /*width: 200px;*/
+            /*height: 200px;*/
+            background: lightgrey;
+            border: 2px solid grey;
+            padding: 10px;
+            text-align: center;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+        }
+
+    .position {
+    position: relative;
+    top: 225px;
+    left:-123px;
+    }
+
+    .margin {
+    margin-top: -220px;
+    margin-left: -120px;
+    }
+
+    .transform {
+    transform: translateY(225px);
+    }
+
+    .margin-bottom {
+    margin-bottom: -50px;
+    }
+    </style>
+</head>
+<body>
+    <div style="padding:140px 40px 40px 40px;">
+
+        <div class="wrapper">
+            <div class="inner-wrapper">
+                <div class="box">
+                    <p>This box is the specimen for comparison purposes.</p>
+                    <p>It is a grey box inside a blue box with a black border.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

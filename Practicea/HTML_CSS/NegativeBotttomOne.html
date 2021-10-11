@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+        .parent {
+            text-align: center;
+            width: 210px;
+            height: 210px;
+            background-color: #e77a7a;
+            /*border: 5px solid yellow; /* ADDED FOR VISIBILITY */
+            display: inline-block;
+            /*vertical-align: top;*/
+            padding: 5px;
+        }
+
+        .child1, .child2 {
+            /*text-align: center;*/
+            width: 200px;
+            height: 200px;
+            /*margin:5px;*/
+            /*border: 1px solid black;*/ /* ADDED FOR VISIBILITY */
+        }
+
+        .child1 {
+            border: 1px solid black;
+            background-color: blue;
+            margin-top: -45px;
+        }
+
+        .child2 {
+            background-color: green;
+            margin-bottom: -50px;
+            /*border: 1px solid black;*/ /* ADDED FOR VISIBILITY */
+        }
+    </style>
+</head>
+<body>
+    <div style="padding:140px 40px 40px 40px;;">
+            <div class="parent">
+                <div class="child1">
+                    <p>This grey box is moved using relative positioning.</p>
+
+                    <p>The page remembers where it was and allocates that space as though the element was still there.</p>
+
+                </div>
+            </div>
+            <div class="parent">
+                <div class="child2">
+                    <p>This grey box is moved using relative positioning.</p>
+
+                    <p>The page remembers where it was and allocates that space as though the element was still there.</p>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

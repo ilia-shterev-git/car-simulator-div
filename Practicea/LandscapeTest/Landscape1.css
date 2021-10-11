@@ -1,0 +1,62 @@
+﻿
+:root {
+    --body_bg_color: #f8f6f4;
+    --head_inner_wrapper: rgba(36, 87, 131, 0.2);
+    --header_right_logo: #14344b;
+    --nav_menu_strips: #b59696;
+    --side_vert_borders: #d8d0d0;
+    --inside_vert_border: #cababa;
+    --inside_horz_border: #cababa;
+    --footer_bg_color: #634800;
+    --footer_color: white;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    padding-top: 50px;
+    width: 100%;
+    height: 160px;
+    background-color: #cababa;
+    text-align: center;
+    /*border-radius: 11px 11px 0 0;*/
+    /*background-image: url("images2/calming_sunset.jpg");*/
+    /*background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+}
+
+main {
+    background-color: #efefef;
+    overflow: hidden;
+    width: 100%;
+    /*border-right: 1px solid var(--side_vert_borders);
+    border-left: 1px solid var(--side_vert_borders);*/
+}
+
+    main .main-content {
+        background-color: #fdf9f0;
+        width: 750px;
+        min-height: 430px;
+        margin: 0 auto 0 auto;
+        box-shadow: 0 0 18px 0;
+    }
+
+#neshtoSi{
+
+
+}
+
+footer {
+    background-color: var(--footer_bg_color);
+    padding: 1%;
+    width: 100%;
+    text-align: center;
+    height:100px;
+    /*border-radius: 0 0 11px 11px;*/
+}

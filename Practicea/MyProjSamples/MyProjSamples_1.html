@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>MyProjSamples_1</title>
+    <link href="MyProjSamples_1.css" rel="stylesheet" />
+</head>
+<body>
+    <section>
+        <div class="article">
+            <h3 class="class-h3">The way I have crunched HTML and CSS, as quickly as possible.</h3><p class="spacer">* Text shown in <span class="term-signal">this color</span> is not a link but a specific term or a phrase for a better / quicker scanning. Hopefully not for irritating.</p>
+
+             <p class="spacer">How to start? May be from the begging of time.</p>
+        </div><div class="article">
+            <h3 class="class-h3">Floating Design and Clearfixes</h3><p class="spacer">The good ol’ <span class="term-signal">floats</span> - or <span class="term-signal">floating design</span>.</p>
+
+            <p class="spacer">By now I already have a video on this page exploring a responsive floating design as well as <a href="XXXXXXXXXXXXXXXXXXX" class="link-grooming" target="_blank"> its code </a> on github.</p>
+
+            <p class="spacer">After that inevitably come the term <span class="term-signal">clearfixes</span>. First was an empty div with <span class="term-signal">clear: both / left / right;</span> style. Star level theorists have explained why and how this div’s style works but for the moment I should say - it was a must if you wanted your stuff to float and you container to enclose them.</p>
+
+            <p class="spacer">After those empty divs real Zen masters came up with a <span class="term-signal">clearfixt</span> - an <span class="term-signal">::after pseudo element</span> which could be attached to the container and accordingly styled. And one line of code got saved.</p>
+        </div><div class="article">
+    <h3 class="class-h3">Pseudo-classes and Pseudo-elements</h3><p class="spacer">Before I continue with <span class="term-signal">::before and ::after</span> I should make a clear distinction between <span class="term-signal">:</span> and <span class="term-signal">::</span> and what are <span class="term-signal">pseudo-classes</span> and <span class="term-signal">pseudo-elements</span>.</p>
+
+    <p class="spacer">As one nice guy named scronide nicely explained on SO:</p>
+
+    <p class="spacer">=============  Quote</p>
+    <p class="spacer">
+        <span class="term-signal">Pseudo-classes (:)</span> allow you to style the different states of an element e.g. when you hover over it, when it is disabled, when it is the first child of its parent, etc.
+    </p>
+
+    <p class="spacer"><span class="term-signal">Pseudo-elements (::)</span> allow you to style different parts of an element e.g. the first line, the first letter, inserting content before or after, etc.</p>
+
+    <p class="spacer">Originally they all used a single colon, but CSS3 introduced the double colon to separate the two.</p>
+
+    <p class="spacer">=============  End Quote</p>
+
+    <p class="spacer">Other nice guys have added that for the moment browsers support both single and double colons, for backward compatibility. But we know that it is better to be compliant to the rules.</p>
+
+    <p class="spacer">So, <span class="term-signal">::before and ::after</span> are pseudo-elements. Very important is that the stuff is being inserted NOT before or after the element using it but INSIDE THE ELEMENT, before the content of the element and after the content of the element.</p>
+
+    <p class="spacer">Another very important moment - THEY DO NOT WORK on <span class="term-signal">images</span>. Images according to some deep cosmic theories belong to the so called <span class="term-signal">Replaced elements</span>. Very deep stuff so that is why I keep a reference to the MDN’s source in that matter and have it available for future reading - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element" class="link-grooming" target="_blank">Replaced elements</a> .</p>
+
+    <p class="spacer">And they (before and after) are <span class="term-signal">inline</span> by default but can be styled as <span class="term-signal">block or inline-block</span>.</p>
+
+    <p class="spacer">An example of how I used it to insert a line (tiny strip) above and under a horizontal navigation:</p>
+
+    <p class="spacer">XXXXXXXXXXXXXXXXXXX</p>
+            </div><div class="article">
+            <h3 class="class-h3">CSS Variables</h3><p class="spacer">Beyond the basics (lets not bore both of us with that) important is the <span class="term-signal">scope</span>. They can be with <span class="term-signal">global scope</span>, accessed/used through the entire document or <span class="term-signal">local variables</span> can be used only inside the selector where they are is declared.</p>
+
+            <p class="spacer">
+                Global variables are declared inside the :root selector.
+                To create a variable with local scope, declare it inside the selector that is going to use it. For ex. It can be declared inside styles for a container with a .wrapper class. So all elements within that container will be able to access it.
+            </p>
+
+            <p class="spacer">They can be used with a <span class="term-signal">fallback value</span>. For ex. <span class="term-signal">color: var(--main-title-color, #14344b)</span>. Even with two, comma separated.</p>
+
+            <p class="spacer">Their values can be a color, numeric value with pixels, rem-s, etc. Their values also <span class="term-signal">can use another variable</span>.</p>
+
+            <p class="spacer">
+                <span class="term-signal">--main-bg-color: #2c1919;</span><br />
+                <span class="term-signal">--background-gradient: linear-gradient(to top, var(--main-bg-color), #222);</span>
+            </p>
+
+            <p class="spacer">
+                They can be used within <span class="term-signal">calc()</span> function. For ex.
+                <span class="term-signal">--main-content-lenght: 800px;</span><br />
+                <span class="term-signal">max-width: calc(var(--main-content-lenght) / 2);</span>
+            </p>
+
+            <p class="spacer">And they can be used in bulk to change a whole theme for example. They can be switched in bulk inside a themes.css where it may contain media query for different themes, like dark or lite or inside javascript objects and change themes with javascript switching code.</p>
+        </div><div class="article">
+            <h3 class="class-h3">Browser’s default styles, css resets and normalizers</h3><p class="spacer">Well, we know about the ongoing chase between browser’s creators and developers. A lot of NOT LOGICAL stuff has been created during the browsers’ creation and has to be maintained for backward compatibility.</p>
+
+            <p class="spacer">So developers have responded in variety of ways. One approach was by using <span class="term-signal">css reset</span>. Which is scrapping browsers’ defaults.</p>
+
+            <p class="spacer">The most basic one </p>
+
+            <p class="spacer">
+                * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                }
+            </p>
+
+            <p class="spacer">Some experts would include <span class="term-signal">border:0; font-size: 100%; font: inherit; vertical-align: baseline;</span></p>
+
+            <p class="spacer">According to the experts this is the minimum to ensure same look across browsers. A lot more can be added of course. Here is one <a href="https://cssreset.com/scripts/eric-meyer-reset-css/" class="link-grooming" target="_blank">complex reset from Eric Meyer</a> well regarded in the field - both the guy and the code. </p>
+
+            <p class="spacer">Very important ingredient is <span class="term-signal">box-sizing</span>. It ensures that when calculating size, the padding and border will be included. As for the other values for this property - <span class="term-signal">content-box</span> does not include padding and border in the calculations. <span class="term-signal">inherit</span> speaks for itself, <span class="term-signal">initial</span> sets this property to its default value. Which is content-box.</p>
+
+            <p class="spacer"><span class="term-signal">Normalizers</span> is one other, opposite to resets approach. Which claims - let’s have browsers’ defaults but let’s rebuild them so that hey are all the same across browsers.</p>
+
+            <p class="spacer">
+                <span class="term-signal">Normalize.css</span> is most popular. There was one very promising project <span class="term-signal"> CSS Remedy </span> and a lot of bright minds in the field were involved. Have not checked it though for about, like half year.
+            </p>
+        </div><div class="article">
+            <h3 class="class-h3">CSS Selectors, Specificity, and the !Important rule.</h3><p class="spacer">As far as <span class="term-signal">selectors</span> are concerned I have presented several projects with different variety of selectors used. I have never been in situation to use the most intricate ones but I have been through courses, have cheat sheets, etc. I will keep rehearsing them.</p>
+
+            <p class="spacer"><span class="term-signal">Specificity</span>, well I believe is easy. Four digits … What I am talking about. Three digits as inline styles are out of any consideration for many experts. So three digits each having increasing weight from right to left. Elements - is right most, like div, p, span. Classes are next. Then Ids come left most and strongest.</p>
+
+            <p class="spacer">That is until we hit with the <span class="term-signal">CSS’ hammer -  the !Important rule</span>. But we know that hitting with a hammer is a dangerous thing to do, as fixing something now, may turn later that we have damaged something else. So, we should avoid hammer’s hits as much as possible.</p>
+        </div><div class="article"><h3 class="class-h3">Block and Inline elements</h3><p class="spacer">Please could you trust me that I know them well. They are so important so they have to learned from very early development’s age. Here is a <a href="https://www.w3schools.com/html/html_blocks.asp" class="link-grooming" target="_blank"> 3schools list </a> of quick explanations, all HTML elements and which of the two types they are.</p></div><div class="article"><h3 class="class-h3">diplsay: block / inline / inline-block</h3><p class="spacer">Also could you trust me that just as well I am familiar with the related display properties which can trick the above mentioned elements into becoming the opposite. And we know the third property <span class="term-signal">inline-block</span> combines the best of both worlds. Helps give top and bottom margin and padding of inline elements. Also helps to align many items in one row without using floats or flex box.</p></div><div class="article">
+            <h3 class="class-h3">Positioning, relative and absolute</h3><p class="spacer">By far most used properties for creating infinite number of creative, beautiful and sophisticated ideas in web design.</p>
+
+            <p class="spacer">But first let me define a term <span class="term-signal">the four directions</span> which would mean <span class="term-signal">top: x; right: x; bottom: x; left: x;</span>. Where x can be any number, both positive or negative.</p>
+
+            <p class="spacer"><span class="term-signal">Relative</span> - elements’ space is reserved within the flow. If we do not specify any of the <span class="term-signal">the four directions</span> the element will stay just where it is by default. If we specify any of the <span class="term-signal">the four directions</span> the element will move accordingly with respect to its <span class="term-signal">default position</span> within the flow.</p>
+
+            <p class="spacer"><span class="term-signal">Absolute</span> - elements’ space is NOT reserved within the flow. If we do not specify any of the <span class="term-signal">the four directions</span> the element will stay just where it is by default, although other element will stuck underneath as if it is not there. If we specify any of the <span class="term-signal">the four directions</span> the element will move accordingly with respect a  <span class="term-signal">first met positioned parent</span> or if there is no such, it will propagate up to to the body.</p>
+
+            <p class="spacer"><span class="term-signal">Absolute positioned element</span> can be stretched horizontally and / or vertically with specifically chosen values for the <span class="term-signal">the four directions</span>. That is, if it does not have its own specified width and / or height.</p>
+        </div><div class="article">
+            <h3 class="class-h3">Fixed positioning</h3><p class="spacer"><span class="term-signal">Fixed positioned element</span> behaves like an <span class="term-signal">absolute positioned element</span> as far as flow of the content is concerned (no space reserved). Once set with any of the <span class="term-signal">the four directions</span> it sticks relative to the <span class="term-signal">viewport</span>, or the browser window.</p>
+
+            <p class="spacer">Just like an <span class="term-signal">аbsolute positioned element, fixed</span>can be stretched horizontally and / or vertically with specifically chosen values for the <span class="term-signal">the four directions</span>. That is, if it does not have its own specified width and / or height.</p>
+        </div><div class="article">
+            <h3 class="class-h3">Sticky positioning</h3><p class="spacer"><span class="term-signal">Sticky positioned element</span> behaves like a <span class="term-signal">static or relative positioned element</span> as far as flow of the content is concerned (has space reserved). It will move with the scroll until the scroll reaches a certain point set with any of the <span class="term-signal">the four directions</span> It sticks then relative to the <span class="term-signal">viewport</span>, or the browser window.</p>
+
+            <p class="spacer">There can be many sticky elements on a page each pushing aside the PREVIOUS while scrolling. That is possible because:</p>
+
+            <p class="spacer"><span class="term-signal">Sticky-positioned elements</span> are only sticky <span class="term-signal">within their parent element</span>.</p>
+
+            <p class="spacer">Setting <span class="term-signal">overflow</span> of any of the parent elements to <span class="term-signal">hidden, scroll or auto</span> may prevent sticky from working.</p>
+        </div><div class="article">
+    <h3 class="class-h3">Stacking Order and Z-Index</h3><p class="spacer">
+        It would be a lot easier to explain with an example so I will make one video soon but until then I offer you one from one of my favorite tutors - The Net Ninja
+        <a href="https://www.youtube.com/watch?v=k4taTzkhzHc" class="link-grooming" target="_blank"> CSS Positioning Tutorial #11 - Z - Index & Stacking Order </a>.
+    </p>
+
+    <p class="spacer">Turns out that the content from the begging of the HTML code has smallest stacking order and in increases as it goes further down. So if we want to place something with <span class="term-signal">fixed position</span> on the top and if we place it first within the HTML code it will go under the rest of the content. The rest of the content will have higher stacking order, i.e. z-index, kind of.</p>
+
+    <p class="spacer">
+        So we have two options to put something fixed on the top - either to put it at the end of the HTML code or to give it higher <span class="term-signal">z-index</span>. This use of of z-index along NOT POSITIONED elements (well not explicitly positioned) is mostly overlooked in tutorials and development cases.
+    </p>
+
+    <p class="spacer">
+        <span class="term-signal">The other use of z-index</span> is when we have positioned elements vertically stacked on the top of each other but we need to correct their vertical order.
+    </p>
+</div><div class="article">
+            <h3 class="class-h3">Transitions.</h3><p class="spacer">Well, I may be pushing my self toward a “fool’s” direction but to me, there are four things major things there:</p>
+
+            <p class="spacer">
+                property to transition,<br />
+                duration of the transition,<br />
+                speed’s variations during transition,<br />
+                transition delay.<br />
+            </p>
+
+            <p class="spacer">They are most powerful and interesting when controlling <span class="term-signal">transforms</span>.</p>
+
+            <p class="spacer">It is good <span class="term-signal">to mention in our code</span> <span class="term-signal">which property we want to transition</span> and save some of the browser’s resources for calculating them on its own.</p>
+
+            <p class="spacer">For the same reason it is a good idea to avoid <span class="term-signal">transition: all;</span></p>
+        </div><div class="article">
+            <h3 class="class-h3">2D transforms</h3><p class="spacer"><span class="term-signal">Transforms</span> can transform basically three things. Shape, size, position.</p>
+
+            <p class="spacer">The four main properties that are available:</p>
+
+            <p class="spacer"><span class="term-signal">skew(x-angle,y-angle) or skewX(angle) / skewY(angle)</span>. The way I have crunched it is - the X part is pushing toward X direction (or -X), but keeping the top and bottom sides parallel to the horizontal (X). The Y angle “lifts up” those sides (or pushes down) so they are no more parallel to the horizontal.</p>
+
+            <p class="spacer"><span class="term-signal">rotate(angle)</span>Well, too obvious and easy ….</p>
+
+            <p class="spacer"><span class="term-signal">scale(x,y) or scaleX(x) / scaleY(y)</span> lets us change the size or the element by multiplying its sizes to the corresponding constant given as function parameters.</p>
+
+            <p class="spacer"><span class="term-signal">translate(x,y) or translateX(n) / translateY(n)</span>Moves the element along the corresponding axis / axes by the given parameter.</p>
+        </div><div class="article">
+            <h3 class="class-h3">Flexbox</h3><p class="spacer">Well, too long and complex topic so extracting the essence. Two most important - the <span class="term-signal">direction of the flow - main axis</span> and the <span class="term-signal">cross axis</span>. Elements follow the <span class="term-signal">main axis</span>. Changing of the flow direction - horizontal / vertical come from <span class="term-signal">flex-flow: row / column ….;</span>  (basically).</p>
+
+            <p class="spacer">Some properties can be applied to the main axis and some to the cross axis. Both of those apply toward the elements as a group and change their alignment inside the <span class="term-signal">flex container</span>.</p>
+
+            <p class="spacer">Most used for flow axis <span class="term-signal">justify-content: center / flex-start / space-between /…. ;</span>. Very similar to that but for the cross axis is <span class="term-signal">align-items: center / flex-start / stretch / ….. ; </span>.</p>
+
+            <p class="spacer">Property like <span class="term-signal">flex: flex-grow flex-shrink width(flex-basis)</span> apply toward ONE element or group of elements, depending on the styling. Same for <span class="term-signal"> align-self: center / flex-start / stretch / ….. ;</span></p>
+
+            <p class="spacer">Many times flex-box is used to just <span class="term-signal">center items</span> in the flex container, <span class="term-signal">vertically</span> most times as this is the easiest way nowadays.</p>
+
+            <p class="spacer">To start laying out items in bulk inside the <span class="term-signal">flex container</span> we need to set <span class="term-signal">flex-wrap: wrap;</span>.</p>
+
+            <p class="spacer">Flex box also <span class="term-signal">allows an easy change of the order of elements</span> in the flex container regardless of their code order with <span class="term-signal">order: x</span>. Where x can be any number, both positive or negative.</p>
+
+            <p class="spacer">While not as powerful as the <span class="term-signal">Grid</span>, <span class="term-signal">Flexbox</span> still allows an easier way (easier than floats) of building responsive pages.</p>
+        </div><div class="article"><h3 class="class-h3">Grid</h3><p class="spacer">Again very complex and long for a discussion topic. As of the beginning of Dec 2020 I am well familiar with it so that I could build some basic examples but I am also short of my own well rounded conclusions and words to discuss it.</p></div><div class="article">
+    <h3 class="class-h3">The End</h3><p class="spacer">That is all for the moment. Please feel free <a href="XXXXXXXXXXXXXXXXXXX" class="link-grooming" target="_blank"> contact me </a> should you have more questions.</p>
+
+    <p class="spacer">Thank you.</p>
+
+    <p class="spacer"></p>
+
+    <p class="spacer"></p>
+
+    <p class="spacer">
+        <a href="XXXXXXXXXXXXXXXXXXX" class="link-grooming" target="_blank"> contact me </a>
+    </p>
+</div>
+    </section>
+</body>
+</html>

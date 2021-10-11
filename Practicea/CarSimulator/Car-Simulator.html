@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Car Simulator V1</title>
+
+    <link href="cssPack/CarSimulatorMainStruct.css" rel="stylesheet" />
+
+    <link href="cssPack/CarSimulatorCarElements.css" rel="stylesheet" />
+
+    <link href="cssPack/CheckBoxSlide.css" rel="stylesheet" />
+
+</head>
+<body>
+    <!--<div class="main-content">-->
+    <div class="outer-wrapper">
+        <div class="main-wrapper">
+            <div class="main-content">
+                <div class="main-top-content">
+                    <div class="left-content">
+                        <div class="reading-div"><p id="pEngineSpeedReader">0</p></div>
+                        <div id="revsMeter"></div>
+                    </div>
+                    <div class="midd-content">
+                        <div class="midd-content-top"></div>
+                        <div class="midd-content-bottom">
+                            <div class="left-panel">
+                                <!--  -->
+                                <div class="breaks-slider">
+                                    <div class="sub-slider">
+                                        <input type="range" min="0" max="4" value="0" step="1" id="breaksPedalID" orient="vertical">
+                                    </div>
+                                    <p id="breaksRangeValue">0</p>
+                                </div>
+                            </div>
+                            <div class="midd-panel">
+                                <div class="gas-slider">
+                                    <div class="sub-slider">
+                                        <input type="range" min="1" max="40" value="1" step="1" id="gasPedalID">
+                                    </div>
+                                    <p id="gasRangeValue">0</p>
+                                </div>
+                            </div>
+                            <div class="right-panel">
+                                <div class="right-panel-left-part">
+                                    <div class="switch-section">
+                                        <div class="d-switch-read"><span class="p-switch-read">Ignition</span></div>
+                                        <div class="switch-on-off-section">
+                                            <div class="switch-onoff-off"><span class="p-switch-off-read">Off</span></div>
+                                            <div class="switch-onoff-midd"> </div>
+                                            <div class="switch-onoff-on"><span class="p-switch-on-read">On</span></div>
+                                        </div>
+                                        <div class="switch-encloser">
+                                            <label class="toggle" for="checkBoxIgnition">
+                                                <input class="toggle__input" name="" type="checkbox" id="checkBoxIgnition">
+                                                <div class="toggle__fill"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="start-button-encloser">
+                                        <div id="startButton" class="start-inactive">
+                                            <p id="pStartButtonText">Start Engine</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="gearSection" class="right-panel-midd-part">
+                                    <div id="gearPark" class="gear-shift selected-gear" data-numeric-val="0"><span class="span-gear-index">P</span></div>
+                                    <div class="vertical-line some-height"></div>
+                                    <div id="gearNeutral" class="gear-shift" data-numeric-val="1"><span class="span-gear-index">N</span></div>
+                                    <div class="vertical-line some-height"></div>
+                                    <div id="gearDirect" class="gear-shift" data-numeric-val="2"><span class="span-gear-index">D</span></div>
+                                    <div class="vertical-line some-height"></div>
+                                    <div id="gearFirst" class="gear-shift" data-numeric-val="3"><span class="span-gear-index">R</span></div>
+                                    <div class="vertical-line some-height"></div>
+                                    <div id="gearSecond" class="gear-shift" data-numeric-val="4"><span class="span-gear-index">1</span></div>
+                                </div>
+                                <div class="panel-warn-manual-gear-shifts">
+                                    <div class="warn"><p id="p">0</p></div>
+                                    <div class="manual-gear-shifts" id="s"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-content">
+                        <div class="reading-div"><p id="pCarSpeedReader">0</p></div>
+                        <div id="speedoMeter"></div>
+                    </div>
+                </div>
+                <!--<div style="margin-left:auto; margin-right:auto; width:880px; border:2px solid blue; height:22px; margin-top:0; margin-bottom:3px;">
+
+                </div>-->
+            </div>
+            <!--<div style="margin-left: auto;margin-right: auto;width:900px; border:2px solid green; height:22px; margin-top:3px; margin-bottom:3px;">
+            </div>-->
+        </div>
+    </div>
+
+    <!--           <script src="AppElementsFactory.js"></script>-->
+
+
+    <script src="AppCssFactory.js"></script>
+
+
+
+    <script src="AppDomsFactory.js"></script>
+    <script src="AppLogicFactory.js"></script>
+
+    <script src="AppMessagesFactory.js"></script>
+
+    <script src="AppEngineRevsFactory.js"></script>
+
+    <script src="CarMainModule.js" type="module"></script>
+
+    <!--<script src="CarSimMainFunct.js"></script>
+    <script src="CarSimulator.js"></script>-->
+    <!--<script type="module" src="CarSimulator.js"></script>-->
+
+
+</body>
+</html>

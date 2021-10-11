@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        .page {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .wrapper {
+            width: 210px;
+            height: 210px;
+            border: 5px solid black;
+            /*margin: 25px;*/
+            display: inline-block;
+            background: lightblue;
+            vertical-align: top;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background: lightgrey;
+            border: 1px solid grey;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .position {
+            position: relative;
+            top: 225px;
+            left:-123px;
+        }
+
+        .margin {
+            margin-top: -220px;
+            margin-left: -120px;
+        }
+
+        .transform {
+            transform: translateY(225px);
+        }
+
+        .margin-bottom {
+            margin-bottom: -50px;
+        }
+            
+
+    </style>
+</head>
+<body>
+    <div style="padding:240px 40px 40px 40px;">
+
+        https://codepen.io/hqman/pen/ExaWvBM
+
+        <h3>DEMONSTRATING THE DIFFERENCE BETWEEN RELATIVE POSITIONING AND POSITIVE/NEGATIVE MARGINS AND TRANSFORMS</h3>
+
+        <div class="page">
+
+            <div class="wrapper">
+
+                <div class="box">
+                    <p>This box is the specimen for comparison purposes.</p>
+                    <p>It is a grey box inside a blue box with a black border.</p>
+                </div>
+            </div>
+
+            <div class="wrapper">
+                <div class="box position">
+                    <p>This grey box is moved using relative positioning.</p>
+
+                    <p>The page remembers where it was and allocates that space as though the element was still there.</p>
+                </div>
+            </div>
+
+            <div class="wrapper">
+                <div class="box margin">
+                    <p>This grey box is moved using negative margin.</p>
+
+                    <p>See how the wrapper div has 'shrunk'?</p>
+
+                    &darr;  &darr;
+                </div>
+            </div>
+
+
+            <div class="wrapper">
+                <div class="box transform">
+                    <p>This grey box is moved using a transform.</p>
+
+                    <p>The page remembers where it was and allocates that space as though the element was still there.</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="box margin-bottom">
+                <p>This grey box is moved using margin bottom.</p>
+
+                <p>See how the wrapper div has 'shrunk'?</p>
+
+                &darr;  &darr;
+            </div>
+        </div>
+    </div>
+</body>
+</html>

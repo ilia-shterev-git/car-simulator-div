@@ -1,0 +1,90 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+ 
+}
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    transform: translate(50%, 40%);
+    border: 1px solid black;
+    /*overflow:hidden;*/
+}
+
+#road {
+    /*top: 0px;
+    left: 0px;*/
+    width: 400px;
+    height: 400px;
+    /*clip-path: inset(10px 20px 30px 40px);*/
+    /*opacity: 0.5;*/
+    /*-webkit-clip-path: circle(20% at 50% 50%);*/
+    /*box-shadow: 0 0 0 9999px rgba(0, 0, 255, 0.2);*/
+
+}
+
+.hole {
+    position: absolute;
+    left: 80px;
+    top: 120px;
+    width: 160px;
+    height: 300px;
+    border-bottom-left-radius: 50% 25%;
+    border-bottom-right-radius: 50% 25%;
+    border-top-left-radius: 60% 15%;
+    border-top-right-radius: 60% 15%;
+    /*border-radius:70% 70% 70% 70%;*/
+    box-shadow: 0 0 20px 200px rgba(122, 122, 122, .9);
+    transform: perspective(22px) rotateX(-1deg);
+}
+
+.mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 400px;
+    height: 400px;
+    background-color: black;
+    opacity: 0.4;
+
+    -webkit-mask: linear-gradient(#000,#fff) top / 100% 50px, /* show 50px from the top */
+    linear-gradient(#000,#000) bottom/ 100% 70px, /* show 70px from the bottom */
+    linear-gradient(#000,#000) left / 20% 100%, /* show 20% from the left */
+    linear-gradient(#000,#000) right / 40% 100%; /* show 40% from the right */
+    -webkit-mask-repeat: no-repeat;
+    
+    /*mask: linear-gradient(#000,#000) top / 100% 50px, linear-gradient(#000,#000) bottom/ 100% 70px
+    , linear-gradient(#000,#000) left / 20px 100%, linear-gradient(#000,#000) right / 40px 100%;
+    mask-repeat: no-repeat;*/
+
+    /*-webkit-mask-image: radial-gradient(180px at 50% 50%, transparent 90%, black 100%);*/
+    /*border-radius: 50%;*/
+    /*clip-path: inset(10px 20px 30px 40px);*/
+    /*border: 140px solid rgba(0,0,0,.2);*/
+    /*clip-path: rect(10px, 20px, 30px, 40px);*/
+    /**/
+    /*-webkit-mask-image: radial-gradient(140px at 50% 50%, transparent 95%, black 100%);*/
+}
+
+.strip {
+    width: 100px;
+    height: 200px;
+    /*text-align: center;*/
+    transform: translate(150%, 50%);
+    background-color: black;
+    /*position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;*/
+    /*opacity: 0.5;*/
+    /*clip: rect(0px,100px,100px,0px);*/
+}

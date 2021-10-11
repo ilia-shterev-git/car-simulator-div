@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script src="test1.js" type="module"></script>
+
+
+
+
+
+    <!--<script>
+        
+
+        function ddd() { }
+        let cleanRoom = function () {
+            return new Promise(function (resolve, reject) {
+                resolve('Cleaned The Room');
+            });
+        };
+
+        let removeGarbage = function (message) {
+            return new Promise(function (resolve, reject) {
+                resolve(message + ' remove Garbage');
+            });
+        };
+
+        let winIcecream = function (message) {
+            return new Promise(function (resolve, reject) {
+                resolve(message + ' won Icecream');
+            });
+        };
+
+        cleanRoom()
+            .then(removeGarbage)
+            .then(function (result) {
+                console.log('finished ' + result);
+            });
+
+    </script>-->
+</body>
+</html>
+
+<!--<script>
+
+    ..https://jsfiddle.net/jspatel/mkjh2ev5/
+
+    function ddd(){}
+    let cleanRoom = function () {
+        return new Promise(function (resolve, reject) {
+            resolve('Cleaned The Room');
+        });
+    };
+
+    let removeGarbage = function (message) {
+        return new Promise(function (resolve, reject) {
+            resolve(message + ' remove Garbage');
+        });
+    };
+
+    let winIcecream = function (message) {
+        return new Promise(function (resolve, reject) {
+            resolve(message + ' won Icecream');
+        });
+    };
+
+    cleanRoom().then(function (result) {
+        return removeGarbage(result);
+    }).then(function (result) {
+        return winIcecream(result);
+    }).then(function (result) {
+        console.log('finished ' + result);
+    })
+
+</script>-->
